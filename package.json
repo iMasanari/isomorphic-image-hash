@@ -1,0 +1,46 @@
+{
+  "name": "isomorphic-image-hash",
+  "version": "0.1.0",
+  "description": "A dhash library that works in both browsers and Node.js.",
+  "main": "./dist/isomorphic-image-hash.cjs.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    "browser": {
+      "import": "./dist/isomorphic-image-hash.browser.mjs",
+      "default": "./dist/isomorphic-image-hash.browser.cjs.js"
+    },
+    "import": "./dist/isomorphic-image-hash.mjs",
+    "default": "./dist/isomorphic-image-hash.cjs.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run build:rollup && npm run build:types",
+    "build:rollup": "rollup -c",
+    "build:types": "tsc -p tsconfig.declaration.json",
+    "test": "vitest run"
+  },
+  "keywords": [
+    "image",
+    "hash",
+    "dhash"
+  ],
+  "author": "iMasanari",
+  "license": "MIT",
+  "dependencies": {
+    "jpeg-js": "^0.4.4",
+    "omggif": "^1.0.10",
+    "pngjs": "^7.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-replace": "^5.0.2",
+    "@types/omggif": "^1.0.3",
+    "@types/pngjs": "^6.0.1",
+    "jimp": "^0.22.5",
+    "rollup": "^3.17.2",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "typescript": "^4.9.5",
+    "vitest": "^0.28.5"
+  }
+}
