@@ -18,6 +18,7 @@ const baseConfig = {
     ...Object.keys(packages.dependencies),
     'fs',
     'fs/promises',
+    'path',
   ],
   treeshake: {
     moduleSideEffects: false,

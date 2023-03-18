@@ -1,8 +1,6 @@
 import { dhashFromImageData } from './hash/dhash'
 import { getImageDataForBrowser } from './image-data/browser'
-import { getGifImageData } from './image-data/gif'
-import { getJpegImageData } from './image-data/jpeg'
-import { getPngImageData } from './image-data/png'
+import { getImageDataForNode } from './image-data/node'
 
 export { distance } from './utils/distance'
 export { dhashFromImageData }
@@ -19,16 +17,7 @@ export const getImageData = (path: string): Promise<ImageDataLike> => {
     return getImageDataForBrowser(path)
   }
 
-  if (path.endsWith('.png')) {
-    return getPngImageData(path)
-  }
-
-  if (path.endsWith('.gif')) {
-    return getGifImageData(path)
-  }
-
-  // JPEG
-  return getJpegImageData(path)
+  return getImageDataForNode(path)
 }
 
 export const dhash = async (image: string | ImageDataLike) => {

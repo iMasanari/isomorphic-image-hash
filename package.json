@@ -41,6 +41,7 @@
     "rollup": "^3.17.2",
     "rollup-plugin-esbuild": "^5.0.0",
     "typescript": "^4.9.5",
+    "vi-fetch": "^0.8.0",
     "vitest": "^0.28.5"
   }
 }

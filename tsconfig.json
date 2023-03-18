@@ -8,6 +8,9 @@
       "webworker"
     ],
     "moduleResolution": "node",
+    "types": [
+      "vi-fetch/matchers"
+    ],
     "declaration": true,
     "strict": true,
     "esModuleInterop": true,
